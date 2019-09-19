@@ -1,6 +1,6 @@
-\#########################################<br />
+\########################################<br />
 \# __Numeric sorting of Genome for Chr names__ #<br />
-\#########################################<br />
+\########################################<br />
 
  mm10 fullgenome downloaded on 13.04.2019 from [UCSC](ftp://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/)
  
@@ -15,9 +15,9 @@ tar -xzvf chromFa.tar.gz
 cat *fa > mm10.fa
 ```
 
-\#######################################
-\# lexical sorting of chromosome names #
-\#######################################
+\########################################<br />
+\# __Lexical sorting of Genome for Chr names__ #<br />
+\########################################<br />
 
 concatenate fasta files in chr1, chr2, chr3, ... order and first leave out chrUn
 ```bash
@@ -27,9 +27,9 @@ for file in $(ls *fa | grep -v 'chrUn' | sort -V)
  cat $file >> genome.fa
 for file in $(ls *fa | grep 'chrUn' | sort -V); do  echo $file; cat $file >> genome.fa; done
 ```
-\##########################################
-\# index rename genome.* to mm10.sorted.* #
-\##########################################
+\##########################################<br />
+\# __index rename genome.* to mm10.sorted.*__ #<br />
+\##########################################<br />
 
 ```bash
 samtools faidx genome.fa
