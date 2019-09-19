@@ -3,13 +3,13 @@
 #######################################
 
 # EK: mm10 fullgenome downloaded on 13.04.2016 from UCSC (ftp://hgdownload.cse.ucsc.edu/goldenPath/mm1010/bigZips/)
-
+'''
 (1) rsync -avzP rsync://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz .
 
 (2) tar -xzvf chromFa.tar.gz
 
 (3) cat *fa > mm10.fa
-
+'''
 
 
 #######################################
