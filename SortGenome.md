@@ -22,10 +22,16 @@ cat *fa > mm10.fa
 concatenate fasta files in chr1, chr2, chr3, ... order and first leave out chrUn
 ```bash
 for file in $(ls *fa | grep -v 'chrUn' | sort -V)
- do
+do
  echo $file
  cat $file >> genome.fa
-for file in $(ls *fa | grep 'chrUn' | sort -V); do  echo $file; cat $file >> genome.fa; done
+done
+
+for file in $(ls *fa | grep 'chrUn' | sort -V)
+do
+ echo $file
+ cat $file >> genome.fa
+done
 ```
 \##########################################<br />
 \## __index rename genome.* to mm10.sorted.*__ ##<br />
