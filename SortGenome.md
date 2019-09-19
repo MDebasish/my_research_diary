@@ -1,8 +1,8 @@
 \#######################################<br />
-\# numeric sorting of chromosome names #<br />
+\# __numeric sorting of chromosome names__ #<br />
 \#######################################<br />
 
- mm10 fullgenome downloaded on 13.04.2019 from UCSC (ftp://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/)
+ mm10 fullgenome downloaded on 13.04.2019 from [UCSC](ftp://hgdownload.cse.ucsc.edu/goldenPath/mm10/bigZips/)
  download with `rsync` or `wget`
 
 ```bash
