@@ -83,3 +83,7 @@ else
  done
 fi
 ```
+
+```bash
+grep -v ^@ Rawdata/star_Aligned.out.sam |awk '{print $5}' | perl -ne 'chomp;$H{$_}++; END {$cnt += $H{$_} for sort keys %H; print "$_ - $H{$_} - ".(($H{$_}/$cnt)*100)."\n" for sort {$a<=>$b} keys %H; }'
+```
