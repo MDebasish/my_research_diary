@@ -87,3 +87,9 @@ fi
 ```bash
 grep -v ^@ Rawdata/star_Aligned.out.sam |awk '{print $5}' | perl -ne 'chomp;$H{$_}++; END {$cnt += $H{$_} for sort keys %H; print "$_ - $H{$_} - ".(($H{$_}/$cnt)*100)."\n" for sort {$a<=>$b} keys %H; }'
 ```
+
+
+```bash
+samtools view -F 256 input.bam # only primary alignments
+samtools view -f 256 input.bam  # only secondary alignments
+```
