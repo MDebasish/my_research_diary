@@ -93,3 +93,12 @@ grep -v ^@ Rawdata/star_Aligned.out.sam |awk '{print $5}' | perl -ne 'chomp;$H{$
 samtools view -F 256 input.bam # only primary alignments
 samtools view -f 256 input.bam  # only secondary alignments
 ```
+
+```bash
+eList <- getGEO("GSE41037")
+eData <- eList[[1]]
+eData
+names(pData(eData))
+pData(eData)[1:3,] 					# Variables 
+exprs(eData)[1:3,]					# expression data
+```
