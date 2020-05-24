@@ -1,3 +1,30 @@
+\##########################################<br />
+\## __Get Data from SRA__ ##<br />
+\#########################################<br />
+```R
+#Read SRA file infos
+sri<-read.csv("SraRunInfo.csv", stringsAsFactors=FALSE)
+files<-basename(sri$download_path)
+for(i in 1:length(files)) download.file(sri$download_path[i], files[i])
+# Assure that all the files has been downloaded successfully
+# Remember, the R object files has been created in the previous code chunk
+stopifnot( all(file.exists(files)) )
+for(f in files) {
+          cmd = paste("fastq-dump --gzip --split-3", f)
+  cat(cmd,"\n")#print the current command
+    system(cmd) # invoke command
+}
+#--------------------------
+
+eList <- getGEO("GSE41037")
+eData <- eList[[1]]
+eData
+names(pData(eData))
+pData(eData)[1:3,] 					# Variables 
+exprs(eData)[1:3,]					# expression data
+```
+
+
 \###########################################<br />
 \## __Numeric sorting of Genome for Chr names__ ##<br />
 \##########################################<br />
@@ -94,11 +121,4 @@ samtools view -F 256 input.bam # only primary alignments
 samtools view -f 256 input.bam  # only secondary alignments
 ```
 
-```bash
-eList <- getGEO("GSE41037")
-eData <- eList[[1]]
-eData
-names(pData(eData))
-pData(eData)[1:3,] 					# Variables 
-exprs(eData)[1:3,]					# expression data
-```
+
