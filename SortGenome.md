@@ -121,4 +121,8 @@ samtools view -F 256 input.bam # only primary alignments
 samtools view -f 256 input.bam  # only secondary alignments
 ```
 
+# PCA Tools
+
+https://www.biostars.org/p/282685/
+https://github.com/kevinblighe/PCAtools
 
